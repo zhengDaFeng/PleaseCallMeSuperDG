@@ -1,6 +1,6 @@
 # PleaseCallMeSuperDG
 
-Record my learning experience
+Record my learning experience.(I'm not good at english. But I want to learn it. So I use english here.)
 
 ## Learning How to Use GitHub
 
