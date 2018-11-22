@@ -1,4 +1,7 @@
 # PleaseCallMeSuperDG
+
 Record my learning experience
 
-生活就像海洋，只有意志坚强的人，才能到达彼岸。
+-------------------------------------------------------------------------------------------------------------------------------------------
+
+I'm learning how to create a repository, create a branch, make a commit, open a pull request and merge pull request.(edit by the other branch)
