@@ -20,11 +20,15 @@ ls
 
 git init: To take a directory and turn it into a new Git repository so you can start version controlling it.
 git clone: Wrapper around several other commands.(mkdir, git init, git remote add, git fetch, git checkout)
+
 git remote add <shortname> <url>  
 git remote -v  
-git fetch [remote-name] (git fetch origin)  
+
+git fetch origin  
+git merge
 git pull  
 
+git status  
 git add Python/Algorithms/bubble_sort.py  
 git commit -m 'Create Python/Algorithms/bubble_sort.py'  
 git push origin master  
