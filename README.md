@@ -57,5 +57,4 @@ Record my learning experience.
 
 ## Hot to Use MaekDown File
 
-When I first edit the README.md file, I wonder that why I cannot open it via the app note. I think it is a text file. I even donot kown how to start my words in the new line.
-Now I know it is a markdown file, and I edit it via markdown editor.
+When my first to edit the README.md file, I didn't even know how to satrt my new paragraph from a new line. Now I know it is a markdown file, and I edit it via markdown editor.
