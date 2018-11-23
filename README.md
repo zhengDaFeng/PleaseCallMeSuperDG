@@ -25,7 +25,7 @@ git remote add <shortname> <url>
 git remote -v  
 
 git fetch origin  
-git merge
+git merge  
 git pull  
 
 git status  
