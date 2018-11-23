@@ -11,7 +11,7 @@ Change README.md. Then fetch and merge.
 
 ### Learning How to Use Git
 
-you can find the detail here.
+you can find the detail [here][https://git-scm.com/book/zh/v2].
 
 mkdir : create a director  
 cd: open a director  
