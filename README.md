@@ -22,8 +22,9 @@ git init: To take a directory and turn it into a new Git repository so you can s
 git clone: Wrapper around several other commands.(mkdir, git init, git remote add, git fetch, git checkout)
 git remote add <shortname> <url>  
 git remote -v  
-git add  
-git commit  
 git fetch [remote-name] (git fetch origin)  
 git pull  
-git push [remote-name] [branch-name] (git push origin master)  
+
+git add Python/Algorithms/bubble_sort.py  
+git commit -m 'Create Python/Algorithms/bubble_sort.py'  
+git push origin master  
