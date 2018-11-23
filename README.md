@@ -9,7 +9,10 @@ I have learned how to create a folder in repository.(Type a folder name followed
 I met a problem how to start a new line here.(Type 2 "Space" key in the end of line)
 Change README.md. Then fetch and merge.  
 
-### Push 
+### Learning How to Use Git
+
+you can find the detail here.
+
 mkdir : create a director  
 cd: open a director  
 git init: Initialized Git repository  
