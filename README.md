@@ -1,34 +1,61 @@
 # PleaseCallMeSuperDG
+Record my learning experience.
 
-Record my learning experience.(I'm not good at english. But I want to learn it. So I use english here.)
+[TOCM]
 
-## Learning How to Use GitHub
+[TOC]
 
-I'm learning how to create a repository, create a branch, make a commit, open a pull request and merge pull request.(Edit by the other branch)  
-I have learned how to create a folder in repository.(Type a folder name followed by "/" to go down into a subfolder)  
-I met a problem how to start a new line here.(Type 2 "Space" key in the end of line)
-Change README.md. Then fetch and merge.  
+## My Web Guide
 
-### Learning How to Use Git
+### Blog
 
-You can find the detail [here](https://git-scm.com/book/zh/v2).
+- [博客园](https://www.cnblogs.com/ "博客园")
 
-touch    
-mkdir  
-cd  
-ls  
+### Doc
 
-git init: To take a directory and turn it into a new Git repository so you can start version controlling it.
-git clone: Wrapper around several other commands.(mkdir, git init, git remote add, git fetch, git checkout)
+- [Microsoft Doc](https://docs.microsoft.com/zh-cn/ "Microsoft Doc")
+- [Halcon Doc](https://www.mvtec.com/products/halcon/documentation/ "Halcon Doc")
+- [Python Doc](https://www.python.org/doc/ "Python Doc")
+- [OpenCV Tutorials](https://docs.opencv.org/master/d9/df8/tutorial_root.html "OpenCV Tutorials")
+- [TensorFlow Tutorials](https://tensorflow.google.cn/tutorials/ "TensorFlow Tutorials")
 
-git remote add <shortname> <url>  
-git remote -v  
+### Tools
 
-git fetch origin  
-git merge  
-git pull  
+- [Google Translation](https://translate.google.cn/#zh-CN/en/%E7%BF%BB%E8%AF%91 "Google Translation")
+- [Online Markdown Editor](https://pandao.github.io/editor.md/en.html "Online Markdown Editor")
 
-git status  
-git add Python/Algorithms/bubble_sort.py  
-git commit -m 'Create Python/Algorithms/bubble_sort.py'  
-git push origin master  
+### Relax
+
+- [酷狗电台](http://www.kugou.com/fmweb/html/index.html "酷狗电台")
+
+### Others
+
+
+
+## My Skill
+
+### Lang
+
+- C++ (a little)
+- C# (Learning && Using)
+- Python (Learning)
+- HTML, CSS, Javascript (a little)
+- 简单梯形图，结构化梯形图，步进梯形图，ST，FB（三菱PLC）
+
+### OS
+
+- Windows
+- Linux (Ubuntu, CentOS, Arch Linux, Deeping)
+
+## How to Use GitHub
+
+- [GitHub Help](https://help.github.com/ "GitHub Help")
+
+## How to Use Git
+
+- [Pro Git](https://git-scm.com/book/zh/v2 "Pro Git")
+
+## Hot to Use MaekDown File
+
+When I first edit the README.md file, I wonder that why I cannot open it via the app note. I think it is a text file. I even donot kown how to start my words in the new line.
+Now I know it is a markdown file, and I edit it via markdown editor.
