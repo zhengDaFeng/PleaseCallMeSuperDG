@@ -11,25 +11,19 @@ Change README.md. Then fetch and merge.
 
 ### Learning How to Use Git
 
-you can find the detail [here](https://git-scm.com/book/zh/v2).
+You can find the detail [here](https://git-scm.com/book/zh/v2).
 
-mkdir : create a director  
-cd: open a director  
-git init: Initialized Git repository  
-  
-git clone [url]  
-  
-cd:  
-ls:  
+touch    
+mkdir  
+cd  
+ls  
 
-touch:  
-git status -s:  
-git add:  
-
-git config --global user.name 'your name':  
-git config --global user.email 'your email':  
-git commit -m 'Create README.md':  
-
-git push -u origin master
-
-
+git init: To take a directory and turn it into a new Git repository so you can start version controlling it.
+git clone: Wrapper around several other commands.(mkdir, git init, git remote add, git fetch, git checkout)
+git remote add <shortname> <url>  
+git remote -v  
+git add  
+git commit  
+git fetch [remote-name] (git fetch origin)  
+git pull  
+git push [remote-name] [branch-name] (git push origin master)  
