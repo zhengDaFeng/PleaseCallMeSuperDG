@@ -43,9 +43,9 @@ If only a single camera is calibrated, an Error in the order of 0.1 pixel (the t
 
 ### Start Rectification
 
-**[read_cam_par](https://www.mvtec.com/doc/halcon/1805/en/read_cam_par.html "read_cam_par")** - Read internal camera parameters from a file.
-**[gen_radial_distortion_map](https://www.mvtec.com/doc/halcon/1805/en/gen_radial_distortion_map.html "gen_radial_distortion_map")** - Generate a projection map that describes the mapping of images corresponding to a changing radial distortion.
-**[map_image](https://www.mvtec.com/doc/halcon/1805/en/map_image.html "map_image")** - Apply a general transformation to an image.
+- **[read_cam_par](https://www.mvtec.com/doc/halcon/1805/en/read_cam_par.html "read_cam_par")** - Read internal camera parameters from a file.
+- **[gen_radial_distortion_map](https://www.mvtec.com/doc/halcon/1805/en/gen_radial_distortion_map.html "gen_radial_distortion_map")** - Generate a projection map that describes the mapping of images corresponding to a changing radial distortion.
+- **[map_image](https://www.mvtec.com/doc/halcon/1805/en/map_image.html "map_image")** - Apply a general transformation to an image.
 
 ### Camera parameters
 
