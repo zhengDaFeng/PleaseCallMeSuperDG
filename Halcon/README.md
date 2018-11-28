@@ -47,6 +47,8 @@ If only a single camera is calibrated, an Error in the order of 0.1 pixel (the t
 - **[gen_radial_distortion_map](https://www.mvtec.com/doc/halcon/1805/en/gen_radial_distortion_map.html "gen_radial_distortion_map")** - Generate a projection map that describes the mapping of images corresponding to a changing radial distortion.
 - **[map_image](https://www.mvtec.com/doc/halcon/1805/en/map_image.html "map_image")** - Apply a general transformation to an image.
 
+PS - The parameter **CamParamIn** of the operator **gen_radial_distortion_map** can be obtained from the operator **read_cam_par**, and its other parameter, **CamParamOut**, is the parameter of the **map** we want to generate. For example, you can set the value of CamParamIn[1] to 0 (distortion coefficient), then assign CamParamIn to CamParamOut, and the generated map can correct the graph.
+
 ### Camera parameters
 
 #### Internal camera parameters
