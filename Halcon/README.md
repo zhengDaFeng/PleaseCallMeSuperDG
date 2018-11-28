@@ -40,19 +40,19 @@ If only a single camera is calibrated, an Error in the order of 0.1 pixel (the t
 - **area_scan_division** - [Focus, Kappa, Sx, Sy, Cx, Cy, ImageWidth, ImageHeight]
 - **line_scan** - [Focus, Kappa, Sx, Sy, Cx, Cy, ImageWidth, ImageHeight, Vx, Vy, Vz]
 
-**Focus** - Focal length of the lens. 0 for telecentric lenses.
-**Kappa** - Distortion coefficient to model the radial lens distortions (only for division model).
-**Sx, Sy** - Scale factors. For pinhole cameras, this corresponds to the horizontal and vertical distance between two neighboring cells on the sensor. For telecentric cameras, this represents the horizontal and vertical size of a pixel in world coordinates (i.e., the distance of the cells on the sensor divided by the magnification of the lens).
-**Cx, Cy** - Column () and row () coordinate of the principal point of the image (center of the radial distortion).
-**ImageWidth, Image Height** - Width and height of the sampled image. Attention: These values decrease if the image is subsampled!
-**Vx, Vy, Vz** - X, Y, and Z-component of the motion vector.
+**Focus** - Focal length of the lens. 0 for telecentric lenses.  
+**Kappa** - Distortion coefficient to model the radial lens distortions (only for division model).  
+**Sx, Sy** - Scale factors. For pinhole cameras, this corresponds to the horizontal and vertical distance between two neighboring cells on the sensor. For telecentric cameras, this represents the horizontal and vertical size of a pixel in world coordinates (i.e., the distance of the cells on the sensor divided by the magnification of the lens).  
+**Cx, Cy** - Column () and row () coordinate of the principal point of the image (center of the radial distortion).  
+**ImageWidth, Image Height** - Width and height of the sampled image. Attention: These values decrease if the image is subsampled!  
+**Vx, Vy, Vz** - X, Y, and Z-component of the motion vector.  
 
 #### External camera parameters
 
-**TransX**: Translation along the x-axis of the camera coordinate system.
-**TransY**: Translation along the y-axis of the camera coordinate system.
-**TransZ**: Translation along the z-axis of the camera coordinate system.
-**RotX**: Rotation around the x-axis of the camera coordinate system.
-**RotY**: Rotation around the y-axis of the camera coordinate system.
-**RotZ**: Rotation around the z-axis of the camera coordinate system.
+**TransX**: Translation along the x-axis of the camera coordinate system.  
+**TransY**: Translation along the y-axis of the camera coordinate system.  
+**TransZ**: Translation along the z-axis of the camera coordinate system.  
+**RotX**: Rotation around the x-axis of the camera coordinate system.  
+**RotY**: Rotation around the y-axis of the camera coordinate system.  
+**RotZ**: Rotation around the z-axis of the camera coordinate system.  
 
