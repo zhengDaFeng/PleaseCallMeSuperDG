@@ -1,23 +1,31 @@
 # Halcon
 
-[Calibration](https://github.com/zhengDaFeng/PleaseCallMeSuperDG/tree/master/Halcon#calibration)
+This is the note I wrote down when I was learning halcon.
+
+## Table of Contents
+
+- [Calibration](https://github.com/zhengDaFeng/PleaseCallMeSuperDG/tree/master/Halcon#calibration)
+
+## Reference
+
+[HALCON Operator Reference - Version 18.05](https://www.mvtec.com/doc/halcon/1805/en/ "HALCON Operator Reference - Version 18.05")
 
 ## Calibration
 
 ### Preparing the calibration input data
 
-- **create_calib_data** - Specifying the number of cameras in the setup and the number of used calibration objects.
-- **set_calib_data_cam_param** - Specify the camera type and the initial internal camera parameters for all cameras.
-- **set_calib_data_calib_object** - Specify the description of all calibration objects.
-- **set_calib_data_observ_points** - Set point-based observation data in a calibration data model.
-- **find_calib_object** - The image coordinates of the extracted calibration marks of the calibration object and a roughly estimated pose of the calibration object relative to the observing camera.
-- **get_calib_data_observ_points** - Query the extracted points.
-- **get_calib_data_observ_contours** - Query the extracted contours.
-- **set_calib_data** - Specify the reference camera or exclude certain internal or external camera parameters from the optimization. 
+- **[create_calib_data](https://www.mvtec.com/doc/halcon/1805/en/create_calib_data.html "create_calib_data")** - Specifying the number of cameras in the setup and the number of used calibration objects.
+- **[set_calib_data_cam_param](https://www.mvtec.com/doc/halcon/1805/en/set_calib_data_cam_param.html "set_calib_data_cam_param")** - Specify the camera type and the initial internal camera parameters for all cameras.
+- **[set_calib_data_calib_object](https://www.mvtec.com/doc/halcon/1805/en/set_calib_data_calib_object.html "set_calib_data_calib_object")** - Specify the description of all calibration objects.
+- **[set_calib_data_observ_points](https://www.mvtec.com/doc/halcon/1805/en/set_calib_data_observ_points.html "set_calib_data_observ_points")** - Set point-based observation data in a calibration data model.
+- **[find_calib_object](https://www.mvtec.com/doc/halcon/1805/en/find_calib_object.html "find_calib_object")** - The image coordinates of the extracted calibration marks of the calibration object and a roughly estimated pose of the calibration object relative to the observing camera.
+- **[get_calib_data_observ_points](https://www.mvtec.com/doc/halcon/1805/en/get_calib_data_observ_points.html "get_calib_data_observ_points")** - Query the extracted points.
+- **[get_calib_data_observ_contours](https://www.mvtec.com/doc/halcon/1805/en/get_calib_data_observ_contours.html "get_calib_data_observ_contours")** - Query the extracted contours.
+- **[set_calib_data](https://www.mvtec.com/doc/halcon/1805/en/set_calib_data.html "set_calib_data")** - Specify the reference camera or exclude certain internal or external camera parameters from the optimization. 
 
 ### Performing the actual camera calibration
 
-- **calibrate_cameras** - Calculates the internal and external camera parameters of a calibration data model.
+- **[calibrate_cameras](https://www.mvtec.com/doc/halcon/1805/en/calibrate_cameras.html "calibrate_cameras")** - Calculates the internal and external camera parameters of a calibration data model.
 
 ### Checking the success of the calibration
 
@@ -26,12 +34,12 @@ If only a single camera is calibrated, an Error in the order of 0.1 pixel (the t
 
 ### Getting the calibration results
 
-- **get_calib_data** - Query the results of the calibration, i.e., internal camera parameters, camera poses (external camera parameters), calibration objects poses etc..
+- **[get_calib_data](https://www.mvtec.com/doc/halcon/1805/en/get_calib_data.html "get_calib_data")** - Query the results of the calibration, i.e., internal camera parameters, camera poses (external camera parameters), calibration objects poses etc..
 
 ### End
 
-- **write_cam_par** - Write the internal camera parameters to a text file.
-- **clear_calib_data** - Free the memory of a calibration data model.
+- **[write_cam_par](https://www.mvtec.com/doc/halcon/1805/en/write_cam_par.html "write_cam_par")** - Write the internal camera parameters to a text file.
+- **[clear_calib_data](https://www.mvtec.com/doc/halcon/1805/en/clear_calib_data.html "clear_calib_data")** - Free the memory of a calibration data model.
 
 ### Camera parameters
 
