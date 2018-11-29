@@ -10,6 +10,11 @@ This is the note I wrote down when I was learning halcon.
 
 [HALCON Operator Reference - Version 18.05](https://www.mvtec.com/doc/halcon/1805/en/ "HALCON Operator Reference - Version 18.05")
 
+## Problems
+- System.DllNotFoundException  
+![](https://github.com/zhengDaFeng/PleaseCallMeSuperDG/blob/master/Halcon/Image/Exception/System.DllNotFoundException.PNG)  
+把缺少的模块dll（如halcon.dll、halcondotnet.dll）放到运行目录，可以解决。或者给系统添加环境变量也可以解决。（[参考](https://www.51halcon.com/thread-997-1-1.html "参考")）  
+
 ## Calibration
 
 ### Preparing the calibration input data
