@@ -1,0 +1,15 @@
+D:\Projects\BaseVision\BaseVision2019\BaseVision2019\bin\Debug\BaseVision2019.exe
+D:\Projects\BaseVision\BaseVision2019\BaseVision2019\bin\Debug\BaseVision2019.pdb
+D:\Projects\BaseVision\BaseVision2019\BaseVision2019\obj\Debug\BaseVision2019.Properties.Resources.resources
+D:\Projects\BaseVision\BaseVision2019\BaseVision2019\obj\Debug\BaseVision2019.csproj.GenerateResource.cache
+D:\Projects\BaseVision\BaseVision2019\BaseVision2019\obj\Debug\BaseVision2019.csproj.CoreCompileInputs.cache
+D:\Projects\BaseVision\BaseVision2019\BaseVision2019\obj\Debug\BaseVision2019.exe
+D:\Projects\BaseVision\BaseVision2019\BaseVision2019\obj\Debug\BaseVision2019.pdb
+D:\Projects\BaseVision\BaseVision2019\BaseVision2019\bin\Debug\halcondotnet.dll
+D:\Projects\BaseVision\BaseVision2019\BaseVision2019\obj\Debug\BaseVision2019.Form_Main.resources
+D:\Projects\BaseVision\BaseVision2019\BaseVision2019\obj\Debug\BaseVision2019.csproj.CopyComplete
+D:\Projects\BaseVision\BaseVision2019\BaseVision2019\bin\Debug\ViewROI.dll
+D:\Projects\BaseVision\BaseVision2019\BaseVision2019\bin\Debug\ViewROI.pdb
+D:\Projects\BaseVision\Bin\BaseVision2019.exe
+D:\Projects\BaseVision\Bin\BaseVision2019.pdb
+D:\Projects\BaseVision\BaseVision2019\BaseVision2019\obj\Debug\BaseVision2019.csprojAssemblyReference.cache

@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2050
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BaseVision2019", "BaseVision2019\BaseVision2019.csproj", "{43EA1BEF-AAF1-49FA-BB2D-8E6CFE69D618}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ViewROI", "ViewROI\ViewROI.csproj", "{E149ECC5-2FE9-4F41-940D-E80B4C96F106}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{43EA1BEF-AAF1-49FA-BB2D-8E6CFE69D618}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{43EA1BEF-AAF1-49FA-BB2D-8E6CFE69D618}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{43EA1BEF-AAF1-49FA-BB2D-8E6CFE69D618}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{43EA1BEF-AAF1-49FA-BB2D-8E6CFE69D618}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E149ECC5-2FE9-4F41-940D-E80B4C96F106}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E149ECC5-2FE9-4F41-940D-E80B4C96F106}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E149ECC5-2FE9-4F41-940D-E80B4C96F106}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E149ECC5-2FE9-4F41-940D-E80B4C96F106}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D7F1BF5A-3C05-4C5D-9208-FA22AABDBEBE}
+	EndGlobalSection
+EndGlobal

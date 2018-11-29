@@ -1,0 +1,8 @@
+D:\Projects\BaseVision\BaseVision2019\ViewROI\obj\Debug\ViewROI.Properties.Resources.resources
+D:\Projects\BaseVision\BaseVision2019\ViewROI\obj\Debug\ViewROI.csproj.GenerateResource.cache
+D:\Projects\BaseVision\BaseVision2019\ViewROI\obj\Debug\ViewROI.csproj.CoreCompileInputs.cache
+D:\Projects\BaseVision\Bin\ViewROI.dll
+D:\Projects\BaseVision\Bin\ViewROI.pdb
+D:\Projects\BaseVision\BaseVision2019\ViewROI\obj\Debug\ViewROI.csproj.CopyComplete
+D:\Projects\BaseVision\BaseVision2019\ViewROI\obj\Debug\ViewROI.dll
+D:\Projects\BaseVision\BaseVision2019\ViewROI\obj\Debug\ViewROI.pdb
