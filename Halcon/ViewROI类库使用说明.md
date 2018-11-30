@@ -11,7 +11,7 @@ HWndCtrl.cs - View主类
 ROIController.cs - ROI主类
 HObjectEntry.cs - 构造对象，包含显示对象和显示设置
 
-## 使用
+## 初级使用方式
 
 声明：
 ```csharp
@@ -20,7 +20,7 @@ ROIController _roiCtrl = null;
 ```
 初始化：
 ```csharp
-_viewCtrl = new HWndCtrl(hWindowControl);
+_viewCtrl = new HWndCtrl(hWindowControl); // 传入期望的hWindowControl控件
 _roiCtrl = new ROIController();
 _viewCtrl.userROIController(_roiCtrl);
 _roiCtrl.setViewController(_viewCtrl);
@@ -32,14 +32,15 @@ _viewCtrl.repain();
 ```
 图像查看：
 ```csharp
+// 执行以下其中一个语句之后，使用鼠标即可进行相应图像操作
 _viewCtrl.setViewState(HWndCtrl.MODE_VIEW_NONE); // 初始状态
 _viewCtrl.setViewState(HWndCtrl.MODE_VIEW_MOVE); // 移动
-_viewCtrl.setViewState(HWndCtrl.MODE_VIEW_ZOOM); // 缩放，原程序中是点击鼠标进行缩放，较为麻烦，改为滚轮缩放
+_viewCtrl.setViewState(HWndCtrl.MODE_VIEW_ZOOM); // 缩放
 _viewCtrl.setViewState(HWndCtrl.MODE_VIEW_ZOOMWINDOW); // 局部放大
-_viewCtrl.setViewState(HWndCtrl.MODE_VIEW_ZOOMANDMOVE); // 增加的一种查看模式，既可以移动图像，也可以缩放图像
 ```
 创建ROI：
 ```csharp
+// 执行以下其中一个语句之后，点击鼠标左键即可在相应位置创建相应ROI
 _roiCtrl.setROIShape(new ROIRectangle1()); // 创建正交的长方形
 _roiCtrl.setROIShape(new ROIRectangle2()); // 创建可旋转的长方形
 _roiCtrl.setROIShape(new ROICircle()); // 创建圆形
@@ -51,3 +52,6 @@ _roiCtrl.setROIShape(new ROILine()); // 创建带方向的线段
 _viewCtrl.resetAll();
 _viewCtrl.repaint();
 ```
+
+## 进阶使用方式
+
