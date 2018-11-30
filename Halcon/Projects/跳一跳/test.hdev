@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hdevelop file_version="1.1" halcon_version="12.0">
+<procedure name="main">
+<interface/>
+<body>
+<c>* 创建模板</c>
+<l>* read_image (Image, 'playagain.png')</l>
+<l>* access_channel (Image, ImageGray, 1)</l>
+<l>* draw_rectangle1 (3600, Row1, Column1, Row2, Column2)</l>
+<l>* gen_rectangle1 (Rectangle, Row1, Column1, Row2, Column2)</l>
+<l>* reduce_domain (Image, Rectangle, ImageReduced)</l>
+<l>* crop_domain (ImageReduced, ImageTemplate)</l>
+<l>* get_image_size (ImageGray, WidthTemplate, HeightTemplate)</l>
+<l>* dev_close_window ()</l>
+<l>* dev_open_window (0, 0, WidthTemplate, HeightTemplate, 'black', WindowHandle)</l>
+<l>* dev_display (ImageGray)</l>
+<l>* create_shape_model (ImageGray, 'auto', -0.39, 0.79, 'auto', 'auto', 'use_polarity', 'auto', 'auto', ModelID)</l>
+<l>* write_shape_model (ModelID, 'ModelDataGameOver')</l>
+<l>* clear_shape_model (ModelID)</l>
+<l>* stop ()</l>
+<c></c>
+<c>* 获取ROI</c>
+<l>RoiRow1 := 340</l>
+<l>RoiCol1 := 27</l>
+<l>RoiRow2 := 1716</l>
+<l>RoiCol2 := 1050</l>
+<l>* draw_rectangle1 (3600, RoiRow1, RoiCol1, RoiRow2, RoiCol2)</l>
+<l>gen_rectangle1 (ROI, RoiRow1, RoiCol1, RoiRow2, RoiCol2)</l>
+<c></c>
+<l>for Index := 1 to 10000 by 1</l>
+<c>    * 获取图片</c>
+<l>    GetImage (ROI, Image, ImageReduced, 'false', '1', Width, Height, ImageFileName)</l>
+<l>    dev_close_window ()</l>
+<l>    dev_open_window (0, 0, Width / 2, Height / 2, 'black', WindowHandle)</l>
+<l>    dev_display (ImageReduced)</l>
+<c>    </c>
+<c>    * 检测游戏结束</c>
+<l>    read_shape_model ('ModelDataGameOver', ModelIDGameOver)</l>
+<l>    find_shape_model (ImageReduced, ModelIDGameOver, -0.39, 0.78, 0.5, 1, 0.5, 'least_squares', 0, 0.9, RowGameOver, ColumnGameOver, AngleGameOver, ScoreGameOver)</l>
+<l>    clear_shape_model (ModelIDGameOver)</l>
+<l>    tuple_length (RowGameOver, LengthRowGameOver)</l>
+<l>    if (LengthRowGameOver == 1)</l>
+<c>        * 再玩一局？</c>
+<l>        Command := 'adb shell input tap ' + ColumnGameOver + ' ' + RowGameOver</l>
+<l>        system_call (Command)</l>
+<l>        wait_seconds (3)</l>
+<c>        * 获取图片</c>
+<l>        GetImage (ROI, Image, ImageReduced, 'true', '1', Width, Height, ImageFileName)</l>
+<l>*         break</l>
+<l>    endif</l>
+<c>    </c>
+<c>    * 获取跳棋位置</c>
+<l>    read_shape_model ('ModelDataI', ModelIDI)</l>
+<l>    find_shape_model (ImageReduced, ModelIDI, -0.39, 0.78, 0.5, 1, 0.5, 'least_squares', 0, 0.9, RowI, ColumnI, AngleI, ScoreI)</l>
+<l>    tuple_length (RowI, LengthRowI)</l>
+<l>    if (LengthRowI == 1)</l>
+<l>        RowI := RowI + 107 - 24</l>
+<l>    endif</l>
+<l>    clear_shape_model (ModelIDI)</l>
+<l>*     stop()</l>
+<c>    * 新增搜索区域</c>
+<l>    tuple_rad (60, Rad1)</l>
+<l>    tuple_rad (-60, Rad2)</l>
+<l>    gen_rectangle2 (Rect1, RowI, ColumnI, Rad1, 30, 4000)</l>
+<l>    gen_rectangle2 (Rect2, RowI, ColumnI, Rad2, 30, 4000)</l>
+<l>    union2 (Rect1, Rect2, RegionSearch)</l>
+<c>    </c>
+<c>    * 获取目标平台位置</c>
+<l>    gen_empty_region (Region)  </l>
+<l>    gray_histo (ROI, ImageReduced, AbsoluteHisto, RelativeHisto)</l>
+<l>    for Index1 := 75 to 255 by 1</l>
+<l>        if (AbsoluteHisto[Index1] &gt; 300)</l>
+<l>            threshold (ImageReduced, RegionTemp, Index1, Index1)</l>
+<l>            connection (RegionTemp, ConnectedRegions)</l>
+<l>            select_shape (ConnectedRegions, SelectedRegions, ['width', 'height'], 'and', [30, 15], [9999, 9999])</l>
+<l>            count_obj (SelectedRegions, Number)</l>
+<l>            for Index2 := 1 to Number by 1</l>
+<l>                select_obj (SelectedRegions, ObjectSelected, Index2)</l>
+<l>                area_center (ObjectSelected, Area, Row, Column)</l>
+<l>                get_region_points (ObjectSelected, Rows, Columns)</l>
+<l>                tuple_min (Columns, Min)</l>
+<l>                tuple_max (Columns, Max)</l>
+<l>                if (Min != RoiCol1 and Max != RoiCol2)</l>
+<l>                    intersection (RegionSearch, ObjectSelected, RegionIntersection)</l>
+<l>                    area_center (RegionIntersection, AreaIntersection, RowIntersection, ColumnIntersection)</l>
+<l>                    if (AreaIntersection &gt; 1)</l>
+<l>                        erosion_circle (ObjectSelected, RegionErosion, 5.5)</l>
+<l>                        union2 (Region, RegionErosion, Region)</l>
+<l>                    endif</l>
+<l>                endif</l>
+<l>            endfor</l>
+<l>        endif            </l>
+<l>    endfor</l>
+<l>    connection (Region, ConnectedRegions)</l>
+<l>    select_shape (ConnectedRegions, SelectedRegions, ['width', 'height', 'circularity'], 'and', [25, 10, 0.35], [9999, 9999, 1])</l>
+<l>    sort_region (SelectedRegions, SortedRegionPlateform, 'upper_right', 'true', 'row')</l>
+<l>    select_obj (SortedRegionPlateform, ObjectSelectedPlateform, 1)</l>
+<l>    area_center (ObjectSelectedPlateform, AreaPlatform, RowPlatform, ColumnPlatform)</l>
+<l>    dev_clear_window ()</l>
+<l>    dev_display (Image)</l>
+<l>    dev_set_color ('green')</l>
+<l>    disp_cross (WindowHandle, RowI, ColumnI, 4000, 0)</l>
+<l>    dev_set_color ('red')</l>
+<l>    dev_set_color ('blue')</l>
+<l>    dev_display (ObjectSelectedPlateform)</l>
+<l>    disp_cross (3600, RowPlatform, ColumnPlatform, 2000, 0)</l>
+<l>    dev_set_color ('red')</l>
+<l>*     stop()</l>
+<c>    </c>
+<c>    * 计算结果，模拟跳跃</c>
+<l>    tuple_length(RowI, ResultDataLength1)</l>
+<l>    tuple_length(RowPlatform, ResultDataLength2)</l>
+<l>    if (ResultDataLength2 &lt; 1 or ResultDataLength1 &lt; 1)</l>
+<l>        write_image (Image, 'png', 16711680, 'Image/' + FileName + '_fail_')</l>
+<l>    else</l>
+<l>        line_position (RowI, ColumnI, RowPlatform, ColumnPlatform, RowCenter, ColCenter, Length, Phi)</l>
+<l>        disp_line (WindowHandle, RowI, ColumnI, RowPlatform, ColumnPlatform)</l>
+<l>        Distance := 0</l>
+<l>        tuple_int(Length * 1.390, Distance)</l>
+<l>        Command3 := 'adb shell input swipe 500 500 605 605 ' + Distance</l>
+<l>        system_call (Command3)</l>
+<l>        dump_window (WindowHandle, 'png', 'Image/' + FileName + '_dump_')</l>
+<l>        wait_seconds (3.5)</l>
+<l>    endif      </l>
+<l>endfor</l>
+</body>
+<docu id="main">
+<parameters/>
+</docu>
+</procedure>
+<procedure name="GetImage">
+<interface>
+<io>
+<par name="ROI" base_type="iconic" dimension="0"/>
+</io>
+<oo>
+<par name="Image" base_type="iconic" dimension="0"/>
+<par name="ImageReduced" base_type="iconic" dimension="0"/>
+</oo>
+<ic>
+<par name="IsScreenCap" base_type="ctrl" dimension="0"/>
+<par name="ImagePath" base_type="ctrl" dimension="0"/>
+</ic>
+<oc>
+<par name="Width" base_type="ctrl" dimension="0"/>
+<par name="Height" base_type="ctrl" dimension="0"/>
+<par name="ImageFileName" base_type="ctrl" dimension="0"/>
+</oc>
+</interface>
+<body>
+<c>* 获取系统时间，联合成字符串</c>
+<l>get_system_time (MSecond, Second, Minute, Hour, Day, YDay, Month, Year)</l>
+<l>tuple_string (Year, '.0f', YearS)</l>
+<l>tuple_string (Month, '.0f', MonthS)</l>
+<l>tuple_string (Day, '.0f', DayS)</l>
+<l>tuple_string (Hour, '.0f', HourS)</l>
+<l>tuple_string (Minute, '.0f', MinuteS)</l>
+<l>tuple_string (Second, '.0f', SecondS)</l>
+<l>tuple_string (MSecond, '.0f', MSecondS)</l>
+<l>ImageFileName := YearS + MonthS + DayS + HourS + MinuteS + SecondS + MSecondS</l>
+<c></c>
+<c>* 采集图像</c>
+<l>if (IsScreenCap == 'true')</l>
+<l>    Command1 := 'adb shell screencap -p /sdcard/1.png'</l>
+<l>    Command2 := 'adb pull /sdcard/1.png .'</l>
+<l>    system_call (Command1)</l>
+<l>    wait_seconds (0.3)</l>
+<l>    system_call (Command2)</l>
+<l>    wait_seconds (0.3)</l>
+<l>endif</l>
+<c></c>
+<c>* 读取图像</c>
+<l>read_image (Image, ImagePath)</l>
+<l>get_image_size (Image, Width, Height)</l>
+<l>access_channel (Image, ImageChannel1, 1)</l>
+<l>reduce_domain (ImageChannel1, ROI, ImageReduced)</l>
+<c></c>
+<l>write_image (Image, 'png', 16711680, 'Image/' + ImageFileName)</l>
+<c></c>
+<l>return ()</l>
+</body>
+<docu id="GetImage">
+<parameters>
+<parameter id="Height"/>
+<parameter id="Image"/>
+<parameter id="ImageFileName"/>
+<parameter id="ImagePath"/>
+<parameter id="ImageReduced"/>
+<parameter id="IsScreenCap"/>
+<parameter id="ROI"/>
+<parameter id="Width"/>
+</parameters>
+</docu>
+</procedure>
+</hdevelop>
