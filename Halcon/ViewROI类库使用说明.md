@@ -2,14 +2,14 @@
 
 ## 概述
 
-ViewROI类库的功能：
-1.View，提供图像显示、移动、缩放、局部放大等功能。
-2.ROI，提供创建Rectangle1、Rectangle2、Circle、CircularArc、Line等ROI的功能。
+ViewROI类库的功能：  
+1.View，提供图像显示、移动、缩放、局部放大等功能。  
+2.ROI，提供创建Rectangle1、Rectangle2、Circle、CircularArc、Line等ROI的功能。  
 
-主要的类和对象：
-HWndCtrl.cs - View主类
-ROIController.cs - ROI主类
-HObjectEntry.cs - 构造对象，包含显示对象和显示设置
+主要的类和对象：  
+HWndCtrl.cs - View主类  
+ROIController.cs - ROI主类  
+HObjectEntry.cs - 构造对象，包含显示对象和显示设置  
 
 ## 初级使用方式
 
