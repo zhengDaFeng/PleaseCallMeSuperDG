@@ -1,23 +1,39 @@
 # PleaseCallMeSuperDG
 Record my learning experience.
 
-[TOCM]
+## Table of Contents
 
-[TOC]
+- [Web Bookmark](https://github.com/zhengDaFeng/PleaseCallMeSuperDG#my-web-guide)
+- [Skill](https://github.com/zhengDaFeng/PleaseCallMeSuperDG#my-skill)
+- Learning
 
 ## My Web Guide
 
 ### Blog
 
-- [²©¿ÍÔ°](https://www.cnblogs.com/ "²©¿ÍÔ°")
+- [åšå®¢å›­](https://www.cnblogs.com/ "åšå®¢å›­")
 
 ### Doc
 
+#### Language
+
 - [Microsoft Doc](https://docs.microsoft.com/zh-cn/ "Microsoft Doc")
-- [Halcon Doc](https://www.mvtec.com/products/halcon/documentation/ "Halcon Doc")
 - [Python Doc](https://www.python.org/doc/ "Python Doc")
+
+#### Vision Library
+
+- [Halcon Doc](https://www.mvtec.com/products/halcon/documentation/ "Halcon Doc")
 - [OpenCV Tutorials](https://docs.opencv.org/master/d9/df8/tutorial_root.html "OpenCV Tutorials")
+
+#### Deep Learning
+
 - [TensorFlow Tutorials](https://tensorflow.google.cn/tutorials/ "TensorFlow Tutorials")
+- [CUDA Toolkit Documentation](https://docs.nvidia.com/cuda/)
+
+#### Github
+
+- [GitHub Help](https://help.github.com/ "GitHub Help")
+- [Pro Git](https://git-scm.com/book/zh/v2 "Pro Git")
 
 ### Tools
 
@@ -26,7 +42,7 @@ Record my learning experience.
 
 ### Relax
 
-- [¿á¹·µçÌ¨](http://www.kugou.com/fmweb/html/index.html "¿á¹·µçÌ¨")
+- [é…·ç‹—ç”µå°](http://www.kugou.com/fmweb/html/index.html "é…·ç‹—ç”µå°")
 
 ### Others
 
@@ -40,21 +56,15 @@ Record my learning experience.
 - C# (Learning && Using)
 - Python (Learning)
 - HTML, CSS, Javascript (a little)
-- ¼òµ¥ÌİĞÎÍ¼£¬½á¹¹»¯ÌİĞÎÍ¼£¬²½½øÌİĞÎÍ¼£¬ST£¬FB£¨ÈıÁâPLC£©
+- ç®€å•æ¢¯å½¢å›¾ï¼Œç»“æ„åŒ–æ¢¯å½¢å›¾ï¼Œæ­¥è¿›æ¢¯å½¢å›¾ï¼ŒSTï¼ŒFBï¼ˆä¸‰è±PLCï¼‰
 
 ### OS
 
 - Windows
 - Linux (Ubuntu, CentOS, Arch Linux, Deeping)
 
-## How to Use GitHub
+## My Experience
 
-- [GitHub Help](https://help.github.com/ "GitHub Help")
-
-## How to Use Git
-
-- [Pro Git](https://git-scm.com/book/zh/v2 "Pro Git")
-
-## Hot to Use MaekDown File
-
-When my first to edit the README.md file, I didn't even know how to satrt my new paragraph from a new line. Now I know it is a markdown file, and I edit it via markdown editor.
+06.21.2017: Graduationg
+06.23.2017: Working for æ·±åœ³å¸‚å…‰å¤§æ¿€å…‰ç§‘æŠ€è‚¡ä»½æœ‰é™å…¬å¸ as a electrical Engineer
+04.27.2018: Working for æ·±åœ³å¸‚å¤§æ—æ¿€å…‰ç§‘æŠ€è‚¡ä»½æœ‰é™å…¬å¸ as a visual algorithm engineer
