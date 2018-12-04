@@ -4,8 +4,8 @@ This is the note I wrote down when I was learning halcon.
 
 ## Table of Contents
 
-- [Calibration]()
-- [Problems]()
+- [Calibration](https://github.com/zhengDaFeng/PleaseCallMeSuperDG/blob/master/Halcon/Calibration.md#calibration)
+- [Problems](https://github.com/zhengDaFeng/PleaseCallMeSuperDG/blob/master/Halcon/Problems.md)
 
 ## Newest HALCON Features
 
