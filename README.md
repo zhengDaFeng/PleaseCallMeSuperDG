@@ -52,7 +52,7 @@ Record my learning experience.
 
 ### Lang
 
-- C++ (a little)
+- C++ (Learning)
 - C# (Learning && Using)
 - Python (Learning)
 - HTML, CSS, Javascript (a little)
