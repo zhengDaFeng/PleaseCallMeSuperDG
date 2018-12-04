@@ -65,6 +65,6 @@ Record my learning experience.
 
 ## My Experience
 
-06.21.2017: Graduationg
-06.23.2017: Working for 深圳市光大激光科技股份有限公司 as a electrical Engineer
-04.27.2018: Working for 深圳市大族激光科技股份有限公司 as a visual algorithm engineer
+06.21.2017: Graduationg  
+06.23.2017: Working for 深圳市光大激光科技股份有限公司 as a electrical Engineer  
+04.27.2018: Working for 深圳市大族激光科技股份有限公司 as a visual algorithm engineer  
