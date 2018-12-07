@@ -1,0 +1,6 @@
+D:\Git_Repositories\PleaseCallMeSuperDG\C Sharp\代码片段\StackBasedIteration\FileSystem\bin\Debug\FileSystem.exe
+D:\Git_Repositories\PleaseCallMeSuperDG\C Sharp\代码片段\StackBasedIteration\FileSystem\bin\Debug\FileSystem.pdb
+D:\Git_Repositories\PleaseCallMeSuperDG\C Sharp\代码片段\StackBasedIteration\FileSystem\obj\Debug\FileSystem.csprojAssemblyReference.cache
+D:\Git_Repositories\PleaseCallMeSuperDG\C Sharp\代码片段\StackBasedIteration\FileSystem\obj\Debug\FileSystem.csproj.CoreCompileInputs.cache
+D:\Git_Repositories\PleaseCallMeSuperDG\C Sharp\代码片段\StackBasedIteration\FileSystem\obj\Debug\FileSystem.exe
+D:\Git_Repositories\PleaseCallMeSuperDG\C Sharp\代码片段\StackBasedIteration\FileSystem\obj\Debug\FileSystem.pdb
