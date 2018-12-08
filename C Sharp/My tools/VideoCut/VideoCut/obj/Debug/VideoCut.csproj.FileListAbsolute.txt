@@ -1,0 +1,5 @@
+D:\Git_Repositories\PleaseCallMeSuperDG\C Sharp\My tools\VideoCut\VideoCut\bin\Debug\VideoCut.exe
+D:\Git_Repositories\PleaseCallMeSuperDG\C Sharp\My tools\VideoCut\VideoCut\bin\Debug\VideoCut.pdb
+D:\Git_Repositories\PleaseCallMeSuperDG\C Sharp\My tools\VideoCut\VideoCut\obj\Debug\VideoCut.csproj.CoreCompileInputs.cache
+D:\Git_Repositories\PleaseCallMeSuperDG\C Sharp\My tools\VideoCut\VideoCut\obj\Debug\VideoCut.exe
+D:\Git_Repositories\PleaseCallMeSuperDG\C Sharp\My tools\VideoCut\VideoCut\obj\Debug\VideoCut.pdb
