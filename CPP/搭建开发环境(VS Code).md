@@ -1,69 +1,137 @@
 ﻿之所以写这个中文档，是因为官方文档是英文的，并且有些地方没说明白...（可能是我太小白了...）
 
-## 1. 安装C++编译器
+## 1. 安装 C++ 编译器
 
-- 安装[MinGW-W64](http://www.mingw-w64.org/doku.php/start) (注意：Architecture选择x86_64版本)
-- 添加系统环境变量（注意：除了安装目录下的bin文件夹路径添加到Path，还可以新建系统变量CPP_INCLUDE变量，并将其下的include文件夹添加进这个我们新建的系统变量）
+- 安装[MinGW-W64](http://www.mingw-w64.org/doku.php/start) (注意：Architecture选择符合自己CPU的版本)
+- 添加系统环境变量（注意：需要重启）
 
-## 2. 安装C/C++扩展
+## 2. 安装 C/C++ 扩展
 
-- 打开VS Code
-- 打开扩展视图(Ctrl+Shift+X)
-- 搜索C++
-- 安装C/C++扩展
+- 安装 VS Code
+- 安装 C/C++ 扩展
 - 重启软件
 
-## 3. 配置智能感知
+## 3. 创建工作区
+
+VS Code 有工作区的的概念，你可以在硬盘中准备一个目录，然后通过 File -> Open Folder... 打开它。  
+我们可以将每个工作区都设置成独立的编辑环境。
+
+## 4. 智能感知和头文件
 
 - 打开命令选项板(Ctrl+Shift+P)
 - 选择**C/Cpp: Edit Configurations...**，打开*c_cpp_properties.json*配置文档
 
 ~~~json
-    {
-	    "name": "Win32",
-	    "includePath": [
-	        "${workspaceFolder}"
-	        // 可以将include路径添加到这个地方
-	    ],
-	    "defines": [
-	        "_DEBUG",
-	        "UNICODE"
-	    ],
-	    "compilerPath": "C:\\mingw-w64\\bin\\gcc.exe", // 指向gcc编译器
-	    "intelliSenseMode": "clang-x64",
-	    "browse": {
-	        "path": [
-	            "${workspaceFolder}"
-	        ],
-	        "limitSymbolsToIncludedHeaders": true,
-	        "databaseFilename": ""
-	    }
-	}
+{
+	"configurations": [{
+		"name": "MinGW",
+		"intelliSenseMode": "gcc-x64",
+		"compilerPath": "D:/MinGW/mingw64/bin/x86_64-w64-mingw32-gcc.exe",
+		"cStandard": "c11",
+		"cppStandard": "c++17",
+		"includePath": [
+			"${workspaceFolder}/**",
+			"D:/MinGW/mingw64/x86_64-w64-mingw32/include",
+			"D:/MinGW/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++",
+			"D:/MinGW/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/tr1"
+		],
+		"defines": [
+			"_DEBUG",
+			"UNICODE",
+			"_UNICODE",
+			"__GNUC__=7",
+			"__cdecl=__attribute__((__cdecl__))"
+		],
+		"browse": {
+			"path": [
+				"${workspaceFolder}/**",
+				"D:/MinGW/mingw64/x86_64-w64-mingw32/include",
+				"D:/MinGW/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++",
+				"D:/MinGW/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/tr1"
+			],
+			"limitSymbolsToIncludedHeaders": true,
+			"databaseFilename": ""
+		}
+	}],
+	"version": 4
+}
 ~~~
 
-## 4. 构建(build)
+## 5. 编译任务
 
 - 打开命令选项板(Ctrl+Shift+P)
 - 选择**Tasks: Configure Task** -> **Create tasks.json file from templates** -> **Others**
 
 ~~~json
-    {
-	    "version": "2.0.0",
-	    "tasks": [
-	        {
-	            "label": "build hello world", // 标签名，根据实际需要
-	            "type": "shell",
-	            "command": "g++",
-	            "args": [
-	                "-g", "helloworld.cpp" // 指向需要构建的文件，根据实际需要
-	            ],
-	            "group": {
-	                "kind": "build",
-	                "isDefault": true
-	            }
-	        }
-	    ]
-	}
+{
+    // 有关 tasks.json 格式的参考文档：https://go.microsoft.com/fwlink/?LinkId=733558 。
+    "version": "2.0.0",
+    "tasks": [{
+        "label": "Compile",
+        "type": "shell", // { shell | process }
+        // 适用于 Windows 的配置：
+        "windows": {
+            "command": "gcc",
+            "args": [
+                "-g",
+                "\"${file}\"",
+                "-o",
+                "\"${fileDirname}\\${fileBasenameNoExtension}.exe\""
+                // 设置编译后的可执行文件的字符集为 GB2312：
+                // "-fexec-charset", "GB2312"
+                // 直接设置命令行字符集为 utf-8：
+                // chcp 65001
+            ]
+        },
+        // 定义此任务属于的执行组：
+        "group": {
+            "kind": "build", // { build | test }
+            "isDefault": true // { true | false }
+        },
+        // 定义如何在用户界面中处理任务输出：
+        "presentation": {
+            // 控制是否显示运行此任务的面板。默认值为 "always"：
+            // - always:    总是在此任务执行时显示终端。
+            // - never:     不要在此任务执行时显示终端。
+            // - silent:    仅在任务没有关联问题匹配程序且在执行时发生错误时显示终端
+            "reveal": "silent",
+            // 控制面板是否获取焦点。默认值为 "false"：
+            "focus": false,
+            // 控制是否将执行的命令显示到面板中。默认值为“true”：
+            "echo": false,
+            // 控制是否在任务间共享面板。同一个任务使用相同面板还是每次运行时新创建一个面板：
+            // - shared:     终端被共享，其他任务运行的输出被添加到同一个终端。
+            // - dedicated:  执行同一个任务，则使用同一个终端，执行不同任务，则使用不同终端。
+            // - new:        任务的每次执行都使用一个新的终端。
+            "panel": "dedicated"
+        },
+        // 使用问题匹配器处理任务输出：
+        "problemMatcher": {
+            // 代码内问题的所有者为 cpp 语言服务。
+            "owner": "cpp",
+            // 定义应如何解释问题面板中报告的文件名
+            "fileLocation": [
+                "relative",
+                "${workspaceFolder}"
+            ],
+            // 在输出中匹配问题的实际模式。
+            "pattern": {
+                // The regular expression.
+                "regexp": "^(.*):(\\d+):(\\d+):\\s+(warning|error):\\s+(.*)$",
+                // 第一个匹配组匹配文件的相对文件名：
+                "file": 1,
+                // 第二个匹配组匹配问题出现的行：
+                "line": 2,
+                // 第三个匹配组匹配问题出现的列：
+                "column": 3,
+                // 第四个匹配组匹配问题的严重性，如果忽略，所有问题都被捕获为错误：
+                "severity": 4,
+                // 第五个匹配组匹配消息：
+                "message": 5
+            }
+        }
+    }]
+}
 ~~~
 
 - 现在可以使用“Ctrl+Shift+B”来构建程序了
@@ -75,30 +143,40 @@
 - 选择C++ (GDB/LLDB)
 
 ~~~json
-    {
-	    "version": "0.2.0",
-	    "configurations": [
-	        {
-	            "name": "(gdb) Launch",
-	            "type": "cppdbg",
-	            "request": "launch",
-	            "program": "${workspaceFolder}/a.exe", // 指向需要运行的程序
-	            "args": [],
-	            "stopAtEntry": false,
-	            "cwd": "${workspaceFolder}",
-	            "environment": [],
-	            "externalConsole": true,
-	            "MIMode": "gdb",
-	            "miDebuggerPath": "C:\\mingw\\bin\\gdb.exe", // 指向调试器
-	            "setupCommands": [
-	                {
-	                    "description": "Enable pretty-printing for gdb",
-	                    "text": "-enable-pretty-printing",
-	                    "ignoreFailures": true
-	                }
-	            ],
-	            "preLaunchTask": "build hello world" // 指向构建任务的标签名
-	        }
-	    ]
-	}
+{
+    "version": "0.2.0",
+    "configurations": [{
+        // 配置 VS Code 调试行为：
+        "name": "GDB Debug", // 设置在启动配置下拉菜单中显示调试配置的名称。
+        "preLaunchTask": "Compile", // 调试会话开始前要运行的任务。
+        "type": "cppdbg", // 设置要使用的基础调试器。使用 GDB 或 LLDB 时必须是 cppdbg 。
+        "request": "launch", // 设置启动程序还是附加到已经运行的实例。启动或附加 ( launch | attach ).
+        "program": "${fileDirname}/${fileBasenameNoExtension}.exe", // 调试器将启动或附加的可执行文件的完整路径。
+        "externalConsole": true, // 设置是否显示外部控制台。
+        "logging": { // 用于确定应该将哪些类型的消息记录到调试控制台。
+            "exceptions": true, // 是否应将异常消息记录到调试控制台。默认为真。
+            "moduleLoad": false, // 是否应将模块加载事件记录到调试控制台。默认为真。
+            "programOutput": true, // 是否应将程序输出记录到调试控制台的可选标志。默认为真。
+            "engineLogging": false, // 是否应将诊断引擎日志记录到调试控制台。默认为假。
+            "trace": false, // 是否将诊断适配器命令跟踪记录到调试控制台。默认为假。
+            "traceResponse": false // 是否将诊断适配器命令和响应跟踪记录到调试控制台。默认为假。
+        },
+        // 配置目标应用程序：
+        "args": [], // 设置调试时传递给程序的命令行参数。
+        "cwd": "${workspaceFolder}", // 设置调试器启动的应用程序的工作目录。
+        "environment": [], // 设置调试时添加到程序环境中的环境变量，例如: [ { "name": "squid", "value": "clam" } ]。
+        // 自定义 GDB 或者 LLDB：
+        "windows": {
+            "MIMode": "gdb", // 指定 VS Code 连接的调试器，必须为 gdb 或者 lldb。
+            "miDebuggerPath": "D:/MinGW/mingw64/bin/gdb.exe" // 调试器的路径，修改为你的安装路径
+        },
+        "miDebuggerArgs": "", // 传递给调试器的附加参数
+        "stopAtEntry": false, // 设置调试器是否停止在目标的入口（附加时忽略）。默认值为 false。
+        "setupCommands": [{ // 执行下面的命令数组以设置 GDB 或 LLDB
+            "description": "Enable pretty-printing for gdb",
+            "text": "-enable-pretty-printing", // 鼠标悬停查看变量的值，需要启用 pretty-printing 。
+            "ignoreFailures": true // 忽略失败的命令，默认为 false 。
+        }]
+    }]
+}
 ~~~
