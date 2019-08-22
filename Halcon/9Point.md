@@ -12,7 +12,7 @@ affine_trans_point_2d (HomMat2D, 1863, 1934, Qx, Qy)
 * 计算仿射变换参数
 hom_mat2d_to_affine_par (HomMat2D, Sx, Sy, Phi, Theta, Tx, Ty)
 ```
-××××××××××××××××××××××××××××××××××××××××× 
+×××××××××××××××××××××××××××××××××××××××××  
 根据三个以上特征点获取仿射变换矩阵 
 vector_to_hom_mat2d(::Px,Py,Qx,Qy：HomMat2D)  
 功能：根据三个以上点对计算仿射变换矩阵，支持旋转、平移、缩放、斜切  
