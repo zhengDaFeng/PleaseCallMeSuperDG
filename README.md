@@ -49,8 +49,6 @@ Record my learning experience.
 
 ## My Skill
 
-![MySkill.png](https://github.com/zhengDaFeng/PleaseCallMeSuperDG/blob/master/Image%20Files/MySkill.png)
-
 ### Lang
 
 - C++ (Learning)
