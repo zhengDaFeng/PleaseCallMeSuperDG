@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hdevelop file_version="1.1" halcon_version="12.0">
+<procedure name="main">
+<interface/>
+<body>
+<c>* 获取图像及图像尺寸</c>
+<l>dev_close_window ()</l>
+<l>read_image (Image, 'fabrik')</l>
+<l>get_image_size (Image, Width, Height)</l>
+<l>dev_open_window_fit_image (Image, 0, 0, -1, -1, WindowHandle)</l>
+<l>dev_set_line_width (1)</l>
+<l>dev_display (Image)</l>
+<c></c>
+<c>* 标记测量位置</c>
+<l>draw_line (WindowHandle, Row1, Column1, Row2, Column2)</l>
+<l>LineParams := [Row1, Column1, Row2, Column2]</l>
+<c></c>
+<c>* 创建测量句柄</c>
+<l>create_metrology_model (MetrologyHandle)</l>
+<c>* 添加测量对象</c>
+<l>set_metrology_model_image_size (MetrologyHandle, Width, Height)</l>
+<l>add_metrology_object_generic (MetrologyHandle, 'line', LineParams, 20, 3, 1, 30, [], [], Index)</l>
+<c></c>
+<c>* 设置测量对象的参数</c>
+<l>* set_metrology_object_param (MetrologyHandle, 'all', 'measure_transition', 'negative')</l>
+<l>* set_metrology_object_param (MetrologyHandle, 'all', 'num_measures',10)</l>
+<l>* set_metrology_object_param (MetrologyHandle, 'all', 'num_instances', 1)</l>
+<l>* set_metrology_object_param (MetrologyHandle, 'all', 'measure_sigma', 1)</l>
+<l>* set_metrology_object_param (MetrologyHandle, 'all', 'measure_length1', 20)</l>
+<l>* set_metrology_object_param (MetrologyHandle, 'all', 'measure_length2', 5)</l>
+<l>* set_metrology_object_param (MetrologyHandle, 'all', 'measure_threshold',30)</l>
+<l>* set_metrology_object_param (MetrologyHandle, 'all', 'measure_interpolation', 'bicubic')</l>
+<l>* set_metrology_object_param (MetrologyHandle, 'all', 'measure_select', 'all')</l>
+<l>* set_metrology_object_param (MetrologyHandle, 'all', 'min_score', 0.7)</l>
+<c></c>
+<c>* 执行测量，获取边缘点集</c>
+<l>dev_set_color ('yellow')</l>
+<l>apply_metrology_model (Image, MetrologyHandle)</l>
+<l>get_metrology_object_measures (Contours, MetrologyHandle, 'all', 'all', Row, Column)</l>
+<l>dev_set_color ('red')</l>
+<l>gen_cross_contour_xld (Cross, Row, Column, 6, 0.785398)</l>
+<c></c>
+<c>* 获取最终测量数据和轮廓线</c>
+<l>dev_set_color ('green')</l>
+<l>dev_set_line_width (2)</l>
+<l>get_metrology_object_result (MetrologyHandle, 'all', 'all', 'result_type', 'all_param', Parameter)</l>
+<l>get_metrology_object_result_contour (Contour, MetrologyHandle, 'all', 'all', 1.5)</l>
+<c></c>
+<c>* 释放测量句柄</c>
+<l>clear_metrology_model (MetrologyHandle)</l>
+</body>
+<docu id="main">
+<parameters/>
+</docu>
+</procedure>
+</hdevelop>
